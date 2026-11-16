@@ -28,6 +28,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 15px 40px;
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-subtle);
@@ -298,6 +299,7 @@ th, td {
 .nav-bar.open {
   display: flex;
   flex-direction: column;
+  width: 100%; 
   gap: 20px;
 }
 .nav-bar a {
