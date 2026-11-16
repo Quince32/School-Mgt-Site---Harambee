@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Harambee Primary School in Makadara, Nairobi. Explore our ECDE and primary programs, school highlights, and student academic results.">
+    <title>Home | Harambee Primary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styling/style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-title">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Harambee Primary School
+        </a>
+        <nav class="nav-bar" id="main-nav" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="finances.html">Finances</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰ MENU</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Harambee Primary School</h1>
+                <p>Nurturing excellence, character, and community growth.</p>
+                <h2>School Motto</h2>
+                <p>Forward ever Backward never</p>
+            </div>
+        </section>
+
+        <section class="overview-container">
+            <div class="school-overview">
+                <h2>Overview</h2>
+                <p>Harambee Primary School is a well-established public, mixed day primary school located in the Makadara Constituency of Nairobi, Kenya.</p>
+                <p>Serving the Maringo/Hamza and Buruburu communities, the school provides accessible, foundational education from Early Childhood Development Education (ECDE) through primary levels for both boys and girls.</p>
+            </div>
+        </section>
+        
+        <section class="highlights-container">
+            <div class="highlight-cards">
+                <div class="card highlight1">
+                    <h2><i class="fa-solid fa-school" aria-hidden="true"></i> School Type</h2>
+                    <p>Public, Mixed Day School (Boys &amp; Girls)</p>
+                </div>
+                <div class="card highlight2">
+                    <h2><i class="fa-solid fa-book-open" aria-hidden="true"></i> Levels Offered</h2>
+                    <p>ECDE (Nursery) &amp; Primary Education</p>
+                </div>
+                <div class="card highlight3">
+                    <h2><i class="fa-solid fa-users" aria-hidden="true"></i> Enrollment</h2>
+                    <p>Over 1,100 students across 24 classrooms</p>
+                </div>
+                <div class="card highlight4">
+                    <h2><i class="fa-solid fa-wheelchair" aria-hidden="true"></i> Facilities &amp; Accessibility</h2>
+                    <p>Features a wheelchair-accessible entrance and parking area, alongside ongoing community-supported upgrades.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <h2>Academic Results</h2>
+            <p>Select a term below to view or download student performance reports.</p>
+            <form class="results-form" id="results-form" novalidate>
+                <label for="results">Select Term:</label>
+                <select id="results" name="term" required>
+                    <option value="" disabled selected>-- Choose a term --</option>
+                    <option value="Term One">Term One</option>
+                    <option value="Term Two">Term Two</option>
+                    <option value="Term Three">Term Three</option>
+                </select>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> View Results
+                </button>
+                <p class="form-feedback" id="results-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2026 Harambee Primary School. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="finances.html">Fee Structure</a></li>
+                <li><a href="login.html">Student Portal</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

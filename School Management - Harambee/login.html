@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to the Harambee Primary School Student Portal to track academic records, manage school requests, and view student updates.">
+    <title>Student Login | Harambee Primary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styling/style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-title">
+            <i class="fa-solid fa-graduation-cap"></i> Harambee Primary School
+        </a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="finances.html">Finances</a></li>
+                <li><a href="login.html" aria-current="page">Login</a></li>
+            </ul>
+        </nav>
+        <button class="menu-btn" aria-expanded="false">☰ MENU</button>
+    </header>
+
+    <main class="login-page">
+        <div class="login-content">
+            <span class="badge">Student Portal</span>
+            <h2>Welcome to Harambee Primary School</h2>
+            <p>Streamline your student experience with our secure student management system. Submit, track, and manage all your requests in one place.</p>
+        </div>
+
+        <form class="login-form" id="login-form" novalidate>
+            <h3>Sign In</h3>
+            
+            <div class="form-field">
+                <label for="student-number">Student Number</label>
+                <div class="input-group">
+                    <i class="fa-solid fa-user input-icon" aria-hidden="true"></i>
+                    <input type="text" id="student-number" name="student-number" placeholder="Enter your student number" required>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6">
+                </div>
+            </div>
+
+            <button type="submit">Login</button>
+            <p class="form-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+            
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2026 Harambee Primary School. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="finances.html">Fee Structure</a></li>
+                <li><a href="login.html">Student Portal</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
