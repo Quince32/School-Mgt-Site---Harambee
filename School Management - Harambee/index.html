@@ -12,17 +12,17 @@
 <body>
     <header>
         <a href="index.html" class="logo-title">
-            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Harambee Primary School
+            <i class="fa-solid fa-graduation-cap"></i> Harambee Primary School
         </a>
-        <nav class="nav-bar" id="main-nav" aria-label="Main Navigation">
+        <nav class="nav-bar">
             <ul>
-                <li><a href="index.html" aria-current="page">Dashboard</a></li>
+                <li><a href="index.html">Dashboard</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="finances.html">Finances</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰ MENU</button>
+        <button class="menu-btn" aria-expanded="false">☰ MENU</button>
     </header>
 
     <main>
@@ -46,19 +46,19 @@
         <section class="highlights-container">
             <div class="highlight-cards">
                 <div class="card highlight1">
-                    <h2><i class="fa-solid fa-school" aria-hidden="true"></i> School Type</h2>
+                    <h2><i class="fa-solid fa-school"></i> School Type</h2>
                     <p>Public, Mixed Day School (Boys &amp; Girls)</p>
                 </div>
                 <div class="card highlight2">
-                    <h2><i class="fa-solid fa-book-open" aria-hidden="true"></i> Levels Offered</h2>
+                    <h2><i class="fa-solid fa-book-open"></i> Levels Offered</h2>
                     <p>ECDE (Nursery) &amp; Primary Education</p>
                 </div>
                 <div class="card highlight3">
-                    <h2><i class="fa-solid fa-users" aria-hidden="true"></i> Enrollment</h2>
+                    <h2><i class="fa-solid fa-users"></i> Enrollment</h2>
                     <p>Over 1,100 students across 24 classrooms</p>
                 </div>
                 <div class="card highlight4">
-                    <h2><i class="fa-solid fa-wheelchair" aria-hidden="true"></i> Facilities &amp; Accessibility</h2>
+                    <h2><i class="fa-solid fa-wheelchair"></i> Facilities &amp; Accessibility</h2>
                     <p>Features a wheelchair-accessible entrance and parking area, alongside ongoing community-supported upgrades.</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         <section class="results-section">
             <h2>Academic Results</h2>
             <p>Select a term below to view or download student performance reports.</p>
-            <form class="results-form" id="results-form" novalidate>
+            <form class="results-form">
                 <label for="results">Select Term:</label>
                 <select id="results" name="term" required>
                     <option value="" disabled selected>-- Choose a term --</option>
@@ -76,9 +76,8 @@
                     <option value="Term Three">Term Three</option>
                 </select>
                 <button type="submit">
-                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> View Results
+                    <i class="fa-solid fa-magnifying-glass"></i> View Results
                 </button>
-                <p class="form-feedback" id="results-feedback" role="status" aria-live="polite"></p>
             </form>
         </section>
     </main>
