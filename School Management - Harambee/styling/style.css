@@ -301,6 +301,8 @@ th, td {
 }
 .nav-bar.open {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* 3. Desktop layout (768px and wider) */
