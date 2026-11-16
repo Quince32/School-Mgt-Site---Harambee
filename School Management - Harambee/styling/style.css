@@ -56,14 +56,13 @@ header {
   transition: color 0.2s ease;
 }
 
-.nav-bar a:hover,
-.nav-bar a.active {
+.nav-bar a:hover {
   color: var(--button);
 }
 
 /* Main Login Layout */
 .login-page {
-  flex: 1; /* Pushes footer to the bottom */
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +161,6 @@ button {
   padding: 12px;
   margin-top: 8px;
   background-color: var(--button);
-  color: #1B3022;
   font-size: 1rem;
   font-weight: 700;
   border: none;
@@ -241,12 +239,11 @@ th, td {
 /* The Grid Container */
 .highlight-cards {
   display: grid;
-  /* Automatically fits as many 250px+ columns as will fit in the screen */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px; /* Space between the cards */
+  gap: 20px; 
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto; /* Centers the grid on the page */
+  margin: 0 auto; 
 }
 
 /* Individual Card Styling */
@@ -256,13 +253,12 @@ th, td {
   border-radius: 8px;
   padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 /* Subtle hover lift effect */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
