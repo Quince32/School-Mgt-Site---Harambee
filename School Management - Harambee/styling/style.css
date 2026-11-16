@@ -295,12 +295,10 @@ th, td {
 }
 .nav-bar {
   display: none;
+  width: 100%;
 }
 .nav-bar.open {
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
-  gap: 20px;
+  display: block;
 }
 .nav-bar a {
   display: block;
