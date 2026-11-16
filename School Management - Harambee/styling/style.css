@@ -300,6 +300,10 @@ th, td {
   flex-direction: column;
   gap: 20px;
 }
+.nav-bar a {
+  display: block;
+  padding: 10px 16px;
+}
 
 /* 3. Desktop layout (768px and wider) */
 @media (min-width: 768px) {
