@@ -12,17 +12,17 @@
 <body>
     <header>
         <a href="index.html" class="logo-title">
-            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Harambee Primary School
+            <i class="fa-solid fa-graduation-cap"></i> Harambee Primary School
         </a>
-        <nav class="nav-bar" id="main-nav" aria-label="Main Navigation">
+        <nav class="nav-bar">
             <ul>
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="finances.html" aria-current="page">Finances</a></li>
+                <li><a href="finances.html">Finances</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰ MENU</button>
+        <button class="menu-btn">☰ MENU</button>
     </header>
 
     <main>
@@ -57,9 +57,9 @@
             </tfoot>
         </table>
 
-        <section class="payment-section" aria-labelledby="payment-heading">
+        <section class="payment-section">
             <h2 id="payment-heading">Make a Payment</h2>
-            <form id="payment-form" novalidate>
+            <form id="payment-form">
                 <label for="payment">Select a payment platform:</label>
                 <select id="payment" name="payment_method" required>
                     <option value="" disabled selected>-- Choose an option --</option>
@@ -68,7 +68,7 @@
                     <option value="Cooperative Bank">Cooperative Bank</option>
                 </select>
                 <button type="submit">Proceed to Pay</button>
-                <p class="form-feedback" id="payment-feedback" role="status" aria-live="polite"></p>
+
             </form>
         </section>
     </main>
