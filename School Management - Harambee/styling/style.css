@@ -1,315 +1,425 @@
+/* =========================================
+   1. COLOR PALETTE & THEME VARIABLES
+   ========================================= */
 :root {
-  --background-color: #1B3022;
-  --surface-color: #243E2C;
-  --color: #F4F1EA;
-  --button: #E07A5F;
-  --button-hover: #C96144;
-  --border-subtle: #f4f1ea13;
-  --font-family: 'Times New Roman', Times, serif;
+    --bg-primary: #F4F7F5;        /* Soft Mint-Alabaster Background */
+    --bg-surface: #FFFFFF;        /* Crisp White Cards & Forms */
+    --primary-green: #1B4332;     /* Deep Academic Forest Green */
+    --secondary-green: #2D6A4F;   /* Hover / Accent Green */
+    --accent-gold: #D4A373;       /* Warm Gold Highlight */
+    --text-dark: #1F2933;         /* Charcoal Body Text */
+    --text-muted: #52606D;        /* Secondary Muted Text */
+    --border-light: #D9E2EC;      /* Subtle Card/Input Borders */
+    --shadow-sm: 0 2px 8px rgba(27, 67, 50, 0.08);
+    --shadow-md: 0 6px 18px rgba(27, 67, 50, 0.12);
+    --radius: 10px;
 }
 
+/* =========================================
+   2. GLOBAL RESET & BASE TYPOGRAPHY
+   ========================================= */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--color);
-  font-family: var(--font-family);
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header & Navigation */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+}
+
+h1, h2, h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: var(--secondary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-green);
+}
+
+/* =========================================
+   3. HEADER & RESPONSIVE SIDE NAVIGATION
+   ========================================= */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: var(--background-color);
-  border-bottom: 1px solid var(--border-subtle);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes logo left & menu button to the side */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
 }
 
 .logo-title {
-  font-size: 1.4rem;
-  margin: 0;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo-title:hover {
+    color: var(--accent-gold);
 }
 
 .nav-bar ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .nav-bar a {
-  text-decoration: none;
-  color: var(--color);
-  font-weight: 500;
-  transition: color 0.2s ease;
+    color: #FFFFFF;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
 }
 
 .nav-bar a:hover,
 .nav-bar a.active {
-  color: var(--button);
+    background-color: rgba(255, 255, 255, 0.14);
+    color: var(--accent-gold);
 }
 
-/* Main Login Layout */
-.login-page {
-  flex: 1; /* Pushes footer to the bottom */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding: 40px 20px;
-  flex-wrap: wrap; /* Stacks cleanly on mobile screens */
+/* Menu button hidden on desktop, positioned on the right side on mobile */
+.menu-btn {
+    display: none;
+    margin-left: auto;
+    background-color: var(--secondary-green);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.login-content {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-subtle);
-  max-width: 460px;
-  padding: 35px;
-  border-radius: 12px;
-  line-height: 1.6;
+.menu-btn:hover {
+    background-color: #40916C;
 }
 
-.badge {
-  display: inline-block;
-  background-color: rgba(224, 122, 95, 0.15);
-  color: var(--button);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.login-content h2 {
-  margin-top: 0;
-}
-
-/* Login Form & Inside Icons */
-.login-form {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-subtle);
-  width: 100%;
-  max-width: 360px;
-  padding: 30px;
-  border-radius: 12px;
-}
-
-.login-form h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.form-field {
-  margin-bottom: 18px;
-}
-
-.form-field label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 6px;
-  border: 1px solid rgba(244, 241, 234, 0.3);
-  background-color: var(--background-color);
-  transition: border-color 0.2s ease;
-}
-
-.input-group:focus-within {
-  border-color: var(--button);
-}
-
-.input-icon {
-  font-size: 15px;
-  color: rgba(244, 241, 234, 0.6);
-  transition: color 0.2s ease;
-}
-
-.input-group:focus-within .input-icon {
-  color: var(--button);
-}
-
-.login-form input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  color: var(--color);
-  font-size: 0.95rem;
-  outline: none;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  background-color: var(--button);
-  color: #1B3022;
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: var(--button-hover);
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-subtle);
-  padding: 15px 40px;
-  font-size: 0.85rem;
-  color: rgba(244, 241, 234, 0.75);
-}
-
-.footer-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-links a {
-  color: rgba(244, 241, 234, 0.75);
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: var(--button);
-}
-
-/* Tables (for your Finances / Dashboard pages) */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-tr {
-  background-color: var(--surface-color);
-}
-
-th, td {
-  border: 1px solid var(--border-subtle);
-  padding: 10px;
-  color: var(--color);
-}
-/*Banner image of kids*/
+/* =========================================
+   4. HERO & CARDS (INDEX.HTML)
+   ========================================= */
 .hero {
-  max-width: 800px; 
-  height: 320px;    
-  margin: 0 auto;   
-  display: flex;
-  align-items: flex-end;
-  padding: 0 2rem;
-  color: var(--color);
-  background-image: 
-  linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-  url("../images/students-image.jpeg");
-  background-size: cover;
-  background-position: top; 
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: #FFFFFF;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
 }
-.school-overview {
-  text-align: center;
+
+.hero h1, .hero h2 {
+    color: #FFFFFF;
 }
-/* The Grid Container */
+
+.hero h2 {
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overview-container,
+.results-section,
+.location-section,
+.form-section,
+.payment-section {
+    background-color: var(--bg-surface);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
 .highlight-cards {
-  display: grid;
-  /* Automatically fits as many 250px+ columns as will fit in the screen */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px; /* Space between the cards */
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto; /* Centers the grid on the page */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
 }
 
-/* Individual Card Styling */
 .card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border-top: 4px solid var(--secondary-green);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
 }
 
-/* Subtle hover lift effect */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
 }
 
 .card h2 {
-  text-decoration: underline;
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  color: #1a202c;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.card p {
-  margin: 0;
-  line-height: 1.6;
-  color: #4a5568;
-}
-.overview-container {
-  max-width: 900px;
-  padding: 0 20px;
-}
-
-.school-overview {
-  padding: 2.25rem;
-  border: 1px solid var(--border-subtle);
-  margin-top: 10px;
+/* =========================================
+   5. TABLES (CONTACT & FINANCES)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-surface);
+    margin: 1.25rem 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
-.school-overview h2 {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-}
-.menu-btn {
-  display: block;
-}
-.nav-bar {
-  display: none;
-}
-.nav-bar.open {
-  display: flex;
+caption {
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    text-align: left;
 }
 
-/* 3. Desktop layout (768px and wider) */
-@media (min-width: 768px) {
-  .menu-btn {
+th, td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+thead {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+}
+
+tfoot {
+    background-color: #E8F0EC;
+}
+
+/* =========================================
+   6. FORMS & BUTTONS (LOGIN, CONTACT, FEES)
+   ========================================= */
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #D8F3DC;
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+}
+
+.login-form,
+.contact-form,
+#payment-form,
+.results-form {
+    background-color: var(--bg-surface);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-field {
+    margin-bottom: 1.15rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text-dark);
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 0.9rem;
+    color: var(--text-muted);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #FAFDFB;
+}
+
+.input-group input {
+    padding-left: 2.5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-green);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+button[type="submit"],
+.btn-secondary {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    border: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--secondary-green);
+}
+
+/* Status Banner for Firebase feedback */
+.firebase-status {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
     display: none;
-  }
+}
 
-  .nav-bar {
-    display: flex; /* Always show links on desktop */
-  }
+.firebase-status.success {
+    display: block;
+    background-color: #D8F3DC;
+    color: #1B4332;
+    border: 1px solid #95D5B2;
+}
+
+.firebase-status.error {
+    display: block;
+    background-color: #FFE3E3;
+    color: #9B2226;
+    border: 1px solid #FFA8A8;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.footer-info {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.footer-links a {
+    color: #D8F3DC;
+}
+
+/* =========================================
+   8. MOBILE RESPONSIVE BREAKPOINTS
+   ========================================= */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    /* Slide-out side drawer on mobile */
+    .nav-bar {
+        position: fixed;
+        top: 64px;
+        right: -260px; /* Hidden off-screen to the right */
+        width: 250px;
+        height: calc(100vh - 64px);
+        background-color: var(--primary-green);
+        padding: 1.5rem;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-bar.open {
+        right: 0; /* Slides in from the side */
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-bar a {
+        display: block;
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+    }
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        text-align: center;
+    }
 }
