@@ -72,7 +72,57 @@ header {
     z-index: 1000;
     box-shadow: var(--shadow-sm);
 }
+/* =========================================
+   4. HERO BANNER WITH BACKGROUND IMAGE
+   ========================================= */
+.hero {
+    /* Uses a linear gradient overlay with dark forest green / black tints 
+       so that the text stands out clearly against the students group portrait */
+    background: 
+        linear-gradient(rgba(27, 67, 50, 0.75), rgba(0, 0, 0, 0.75)),
+        url('../images/students-image.jpeg') center 30%/cover no-repeat;
+    color: #FFFFFF;
+    padding: 5rem 2rem; /* Added extra padding to give the students' faces breathing room */
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    
+    /* Ensuring correct flex or block display for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    /* Soft drop shadow to make the text pop against the varying background */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.hero p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+    font-size: 0.95rem;
+    color: var(--accent-gold); /* Warm gold color for section highlight */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
 .logo-title {
     color: #FFFFFF;
     font-size: 1.25rem;
